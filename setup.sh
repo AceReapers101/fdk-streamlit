@@ -1,5 +1,3 @@
-python -m pip install detectron2 -f \
-  https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/torch1.7/index.html
 mkdir -p ~/.streamlit/
 echo "\
 [general]\n\
