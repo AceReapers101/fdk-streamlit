@@ -19,7 +19,7 @@ Cython==0.29.21
 dataclasses==0.6
 decorator==4.4.2
 defusedxml==0.6.0
--i https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/torch1.7/index.html
+--extra-index-url https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/torch1.7/index.html
 detectron2==0.3+cpu
 entrypoints==0.3
 filelock==3.0.12
