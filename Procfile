@@ -1,1 +1,1 @@
-web: python -m pip install detectron2 -f \ https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/torch1.7/index.html && sh setup.sh && streamlit run index.py
+web: sh setup.sh && streamlit run index.py
