@@ -18,7 +18,7 @@ elif option == "Machine Translation":
     st.header('Machine Translation')
 
     st.spinner()
-    with st.spinner(text='In progress'):
+    with st.spinner(text='Loading...'):
         st.echo()
         with st.echo():
             from src.core.translate import Translator_M
@@ -49,7 +49,7 @@ elif option == "Super Resolution":
     st.header('Super Resolution')
 
     st.spinner()
-    with st.spinner(text='In progress'):
+    with st.spinner(text='Loading...'):
         st.echo()
         with st.echo():
             import torch
@@ -88,7 +88,7 @@ elif option == "Object Detection":
     st.header('Object Detection')
 
     st.spinner()
-    with st.spinner(text='In progress'):
+    with st.spinner(text='Loading...'):
         st.echo()
         with st.echo():
             import torch
