@@ -64,15 +64,15 @@ elif option == "Super Resolution":
     with st.echo():
         img_cv = utils.pil_to_cv2(img)
         output = super_res.predict(img_cv)
-        cv2.imwrite('tmp/tempImage.jpg', output)
-        st.image('tmp/tempImage.jpg',width=700)
+        cv2.imwrite('tempImage.jpg', output)
+        st.image('tempImage.jpg',width=700)
     
     st.subheader('Comparison')
     left_column, right_column = st.beta_columns(2)
     left_column.write("Before")
     left_column.image(img,width=350)
     right_column.write("After")
-    right_column.image('tmp/tempImage.jpg',width=350)
+    right_column.image('tempImage.jpg',width=350)
 
 elif option == "Object Detection":
     
