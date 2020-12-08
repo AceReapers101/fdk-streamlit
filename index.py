@@ -17,24 +17,26 @@ elif option == "Machine Translation":
     caching.clear_cache()
     st.header('Machine Translation')
 
-    st.echo()
-    with st.echo():
-        from src.core.translate import Translator_M
-        from src.core.utils import utils
+    st.spinner()
+    with st.spinner(text='In progress'):
+        st.echo()
+        with st.echo():
+            from src.core.translate import Translator_M
+            from src.core.utils import utils
 
-    st.echo()
-    with st.echo():
-        Trans = Translator_M(task='Helsinki-NLP/opus-mt-en-ROMANCE')
+        st.echo()
+        with st.echo():
+            Trans = Translator_M(task='Helsinki-NLP/opus-mt-en-ROMANCE')
 
-    st.echo()
-    with st.echo():
-        text_to_translate = ['>>fr<< this is a sentence in english that we want to translate to french',
-                            '>>pt<< This should go to portuguese',
-                            '>>es<< And this to Spanish']
+        st.echo()
+        with st.echo():
+            text_to_translate = ['>>fr<< this is a sentence in english that we want to translate to french',
+                                '>>pt<< This should go to portuguese',
+                                '>>es<< And this to Spanish']
 
-        output = Trans.predict(text_to_translate)
-        st.subheader('Output')
-        st.write(output)
+            output = Trans.predict(text_to_translate)
+            st.subheader('Output')
+            st.write(output)
 
     st.subheader('Translated Text')
     left_column, right_column = st.beta_columns(2)
@@ -46,29 +48,32 @@ elif option == "Super Resolution":
     caching.clear_cache()
     st.header('Super Resolution')
 
-    st.echo()
-    with st.echo():
-        import torch
-        from src.core.super_res import SuperReser
-        from src.core.utils import utils
-        from PIL import Image
-        import cv2
+    st.spinner()
+    with st.spinner(text='In progress'):
+        st.echo()
+        with st.echo():
+            import torch
+            from src.core.super_res import SuperReser
+            from src.core.utils import utils
+            from PIL import Image
+            import cv2
+        
 
-    st.echo()
-    with st.echo():
-        super_res = SuperReser(name="SuperResssss")
+        st.echo()
+        with st.echo():
+            super_res = SuperReser(name="SuperResssss")
 
-    st.echo()
-    with st.echo():
-        img = Image.open("src/core/base_libs/ESRGAN/ny/rsz_china-street-changsha-city.jpg")
-        st.image(img,width=700)
+        st.echo()
+        with st.echo():
+            img = Image.open("src/core/base_libs/ESRGAN/ny/rsz_china-street-changsha-city.jpg")
+            st.image(img,width=700)
 
-    st.echo()
-    with st.echo():
-        img_cv = utils.pil_to_cv2(img)
-        output = super_res.predict(img_cv)
-        cv2.imwrite('tempImage.jpg', output)
-        st.image('tempImage.jpg',width=700)
+        st.echo()
+        with st.echo():
+            img_cv = utils.pil_to_cv2(img)
+            output = super_res.predict(img_cv)
+            cv2.imwrite('tempImage.jpg', output)
+            st.image('tempImage.jpg',width=700)
     
     st.subheader('Comparison')
     left_column, right_column = st.beta_columns(2)
@@ -82,27 +87,29 @@ elif option == "Object Detection":
     caching.clear_cache()
     st.header('Object Detection')
 
-    st.echo()
-    with st.echo():
-        import torch
-        from src.core.detect import Detector
-        from src.core.utils import utils
-        from PIL import Image
-        import cv2
+    st.spinner()
+    with st.spinner(text='In progress'):
+        st.echo()
+        with st.echo():
+            import torch
+            from src.core.detect import Detector
+            from src.core.utils import utils
+            from PIL import Image
+            import cv2
 
-    st.echo()
-    with st.echo():
-        det = Detector(name="DemoDet")
+        st.echo()
+        with st.echo():
+            det = Detector(name="DemoDet")
 
-    st.echo()
-    with st.echo():
-        img = Image.open("misc/nyc_superres/out0166.jpg.jpg")
-        st.image(img,width=700)
+        st.echo()
+        with st.echo():
+            img = Image.open("misc/nyc_superres/out0166.jpg.jpg")
+            st.image(img,width=700)
 
-    st.echo()
-    with st.echo():
-        img_cv = utils.pil_to_cv2(img)
-        output = det.predict(img_cv)
-        out_img = det.visualize(img_cv,output,figsize=(18,18))
-        cv2.imwrite('tempImage.jpg', out_img)
-        st.image('tempImage.jpg',width=700)
+        st.echo()
+        with st.echo():
+            img_cv = utils.pil_to_cv2(img)
+            output = det.predict(img_cv)
+            out_img = det.visualize(img_cv,output,figsize=(18,18))
+            cv2.imwrite('tempImage.jpg', out_img)
+            st.image('tempImage.jpg',width=700)
