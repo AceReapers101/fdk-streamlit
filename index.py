@@ -100,5 +100,5 @@ elif option == "Object Detection":
         img_cv = utils.pil_to_cv2(img)
         output = det.predict(img_cv)
         out_img = det.visualize(img_cv,output,figsize=(18,18))
-        cv2.imwrite('tmp/tempImage.jpg', out_img)
-        st.image('tmp/tempImage.jpg',width=700)
+        cv2.imwrite('tempImage.jpg', out_img)
+        st.image('tempImage.jpg',width=700)
