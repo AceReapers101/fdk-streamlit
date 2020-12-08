@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit import caching
 import os
 
 st.title('1stDayKit')
@@ -13,6 +14,7 @@ if option == "----":
 
 elif option == "Machine Translation":
 
+    caching.clear_cache()
     st.header('Machine Translation')
 
     st.echo()
@@ -41,6 +43,7 @@ elif option == "Machine Translation":
 
 elif option == "Super Resolution":
     
+    caching.clear_cache()
     st.header('Super Resolution')
 
     st.echo()
@@ -76,6 +79,7 @@ elif option == "Super Resolution":
 
 elif option == "Object Detection":
     
+    caching.clear_cache()
     st.header('Object Detection')
 
     st.echo()
